@@ -13,6 +13,7 @@ import com.minecolonies.coremod.colony.requestsystem.init.RequestSystemInitializ
 import com.minecolonies.coremod.colony.requestsystem.init.StandardFactoryControllerInitializer;
 import com.minecolonies.coremod.commands.CommandEntryPoint;
 import com.minecolonies.coremod.commands.CommandEntryPointNew;
+import com.minecolonies.coremod.commands.colonycommands.KNDeleteColonyCommand;
 import com.minecolonies.coremod.event.EventHandler;
 import com.minecolonies.coremod.event.FMLEventHandler;
 import com.minecolonies.coremod.fixers.TileEntityIdFixer;
@@ -339,5 +340,7 @@ public class MineColonies
         // register server commands
         event.registerServerCommand(new CommandEntryPoint());
         event.registerServerCommand(new CommandEntryPointNew());
+
+        event.registerServerCommand(new KNDeleteColonyCommand());
     }
 }
