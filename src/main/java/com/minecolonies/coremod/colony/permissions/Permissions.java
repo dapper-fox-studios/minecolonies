@@ -183,6 +183,8 @@ public class Permissions implements IPermissions
 
         //Neutral
         permissionMap.put(Rank.NEUTRAL, 0);
+        this.setPermission(Rank.NEUTRAL, Action.TOSS_ITEM);
+        this.setPermission(Rank.NEUTRAL, Action.PICKUP_ITEM);
         this.setPermission(Rank.NEUTRAL, Action.ACCESS_FREE_BLOCKS);
 
         //Hostile
