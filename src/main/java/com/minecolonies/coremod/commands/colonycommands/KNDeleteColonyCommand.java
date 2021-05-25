@@ -45,6 +45,14 @@ public class KNDeleteColonyCommand extends CommandBase {
                 }
                 else {
                     server.addScheduledTask(() -> IColonyManager.getInstance().deleteColonyByWorld(colony.getID(), true, sender.getEntityWorld()));
+
+                    final ITextComponent colonyDeleted = new TextComponentString("Colony named: ")
+                            .appendSibling(new TextComponentString(colony.getName())
+                            .setStyle(new Style().setColor(TextFormatting.GREEN)))
+                            .appendSibling(new TextComponentString(" has been deleted."))
+                            .setStyle(new Style().setColor(TextFormatting.RESET));
+
+                    sender.sendMessage(colonyDeleted);
                     confirmed = false;
                 }
             }
